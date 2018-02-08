@@ -3,7 +3,7 @@
 <div class="container">
   <div class="jumbotron">
     <h1>Create Purchase Orders</h1>
-    <form name="myForm" action="create_expense.php" onsubmit="return checkAddress()" method="post">
+    <form name="myForm" action="create_expense.php" method="post">
     <h6 class="p-3 mb-4 mt-4 bg-primary text-white">1. General Information</h2>
     <div class="form-group">
       <label>Choose a supplier</label>
@@ -35,15 +35,15 @@
         <div id="nonblank"></div>
         <div class="form-group col-md-7">
           <label>Description</label>
-          <input name="desc[]" type="text" class="form-control" required="required">
+          <input name="desc[]" type="text" class="form-control" required="required" onblur="checkDesc()">
         </div>
         <div class="form-group col-md-1">
           <label>QTY</label>
-          <input name="qty[]" type="number" class="form-control">
+          <input name="qty[]" type="number" class="form-control" required="required" onblur="checkQty()">
         </div>
         <div class="form-group col-md-2">
           <label>Cost/Unit (in baht)</label>
-          <input name="cost[]" type="number" class="form-control">
+          <input name="cost[]" type="number" class="form-control" required="required" onblur="checkCost()">
         </div>
       </div>
     </div>

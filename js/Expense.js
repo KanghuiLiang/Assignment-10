@@ -9,7 +9,7 @@ $(function(){
 
 
 //check validation
-//for address
+//for product
 var elProduct = document.getElementByName('product[]');
 var elP = document.getElementById('nonblank')
 
@@ -20,14 +20,27 @@ function checkProduct (){
     } else {
         elP.innerHTML = '';
     }
-}
-// elAddress.addEventListener('blur', function() {
-//     checkAddress(1);
-// }, false);
+} 
 
-// function checkAddress() {
-// 	var elAdd = document.forms["myForm"] ["shipping"].value;
-// 	if (elAdd==null || x=="") {
-// 	alert ("Must fill in address");
-//    	return false;
-//     }
+// for qty
+var elQty = document.getElementByName('qty[]');
+var elq = document.getElementById('blank')
+function checkQty(min) {
+    if (elQty.value.length < min) {
+        elq.style.color = 'red';
+        elq.textContent = 'Your qty must be ' + min + 'or more';
+    } else {
+        elq.innerHTML = '';
+    }
+}
+elAddress.addEventListener('blur', function() {
+    checkAddress(1);
+   }, false);
+
+// for desc
+function checkDesc() {
+	var elDesc = document.getElementByName('desc[]').value;
+	if (elDesc==null || x=="") {
+	   alert ("Must fill in address");
+   	return false;
+    }
